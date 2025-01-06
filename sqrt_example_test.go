@@ -1,6 +1,8 @@
 package cal
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func ExampleSqrt() {
 	fmt.Println(Sqrt(20))

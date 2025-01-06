@@ -8,7 +8,8 @@ func ExampleNaturalSequence() {
 	var n int = 1
 	for i := 0; i < 8; i++ {
 		a := NaturalSequence(n)
-		fmt.Printf("%.3f\t %.4f\t (n = %.e)\n", a, a, float64(n))
+		fmt.Printf("%.3f\t %.4f\t (n = %.e)\n",
+			a, a, float64(n))
 		n *= 10
 	}
 	// Output:

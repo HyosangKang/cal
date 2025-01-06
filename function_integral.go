@@ -1,14 +1,16 @@
 package cal
 
-const NsubInt = 1000
+const NsubInt = 50000
 
 func (fn Function) Integral() float64 {
-	xarr := Linspace(fn.Interval[0], fn.Interval[1], NsubInt)
+	a, b := fn.Interval[0], fn.Interval[1]
+	xarr := Linspace(a, b, NsubInt)
 	var sum float64
+	f := fn.Formula
 	for i := 0; i < NsubInt; i++ {
 		a, b := xarr[i], xarr[i+1]
-		sum += (fn.Formula(a) + 4*fn.Formula((a+b)/2) + fn.Formula(b))
+		sum += (f(a) + 4*f((a+b)/2) + f(b))
 	}
-	dx := (fn.Interval[1] - fn.Interval[0]) / NsubInt
+	dx := (b - a) / NsubInt
 	return sum * dx / 6
 }

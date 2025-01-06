@@ -17,5 +17,5 @@ var Cycloid = Curve{
 
 func ExampleCurve_Length() {
 	fmt.Printf("%.4f\n", Cycloid.Length())
-	// Output: 7.4256
+	// Output: 7.9999
 }
